@@ -193,7 +193,9 @@ export default async function Login({
         <Button className="mb-2 rounded-md bg-blue-700 px-4 py-2 text-white">
           Login
         </Button>
-
+        <Button className="border-foreground/20 mb-2 rounded-md border px-4 py-2">
+          Login With Keycloak
+        </Button>
         <Button
           formAction={signUp}
           className="border-foreground/20 mb-2 rounded-md border px-4 py-2"

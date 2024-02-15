@@ -10,6 +10,8 @@ export default function KeycloakLogin() {
         scopes: "openid"
       }
     })
+    console.log(data)
+    console.log(error)
   }
   return (
     <Button

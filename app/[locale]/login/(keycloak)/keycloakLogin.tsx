@@ -7,11 +7,10 @@ export default function KeycloakLogin() {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "keycloak",
       options: {
-        scopes: "openid"
+        scopes: "openid",
+        redirectTo: "http://localhost:3000/login"
       }
     })
-    console.log(data)
-    console.log(error)
   }
   return (
     <Button

@@ -9,7 +9,7 @@ import { get } from "@vercel/edge-config"
 import { Metadata } from "next"
 import { cookies, headers } from "next/headers"
 import { redirect } from "next/navigation"
-import KeycloakLogin from "./(keycloak)/keycloakLogin"
+import KeycloakLogin, { refreshLogin } from "./(keycloak)/keycloakLogin"
 
 export const metadata: Metadata = {
   title: "Login"
@@ -32,9 +32,13 @@ export default async function Login({
       }
     }
   )
+
   const session = (await supabase.auth.getSession()).data.session
 
+  console.log("BACK HERE ON LOGIN PAGE AGAIN!!")
+
   if (session) {
+    console.log("SESSION ALREADY EXISTS!")
     const { data: homeWorkspace, error } = await supabase
       .from("workspaces")
       .select("*")
@@ -47,6 +51,9 @@ export default async function Login({
     }
 
     return redirect(`/${homeWorkspace.id}/chat`)
+  } else {
+    console.log("SESSION DOES NOT EXIST YET!")
+    //refreshLogin()
   }
 
   const signIn = async (formData: FormData) => {

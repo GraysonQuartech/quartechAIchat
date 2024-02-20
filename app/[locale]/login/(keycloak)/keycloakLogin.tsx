@@ -1,6 +1,9 @@
 "use client"
 import { supabase } from "@/lib/supabase/browser-client"
 import { Button } from "@/components/ui/button"
+import { NextResponse } from "next/server"
+
+export function refreshLogin() {}
 
 export default function KeycloakLogin() {
   async function signInWithKeycloak() {
@@ -11,6 +14,7 @@ export default function KeycloakLogin() {
         redirectTo: "http://localhost:3000/login"
       }
     })
+    // return NextResponse.redirect("http://localhost:3000/login")
   }
   return (
     <Button

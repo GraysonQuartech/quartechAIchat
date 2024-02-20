@@ -9,7 +9,7 @@ import { get } from "@vercel/edge-config"
 import { Metadata } from "next"
 import { cookies, headers } from "next/headers"
 import { redirect } from "next/navigation"
-import KeycloakLogin, { refreshLogin } from "./(keycloak)/keycloakLogin"
+import KeycloakLogin from "./(keycloak)/keycloakLogin"
 
 export const metadata: Metadata = {
   title: "Login"

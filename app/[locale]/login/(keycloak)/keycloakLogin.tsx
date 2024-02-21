@@ -40,7 +40,7 @@ export default function KeycloakLogin() {
       onClick={() => signInWithKeycloak()}
       className="mb-2 rounded-md bg-blue-700 px-4 py-2 text-white"
     >
-      Verifiable Credential
+      Login Verifiable Credential
     </Button>
   )
 }

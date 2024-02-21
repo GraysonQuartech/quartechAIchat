@@ -172,7 +172,7 @@ export default async function Login({
 
   return (
     <div
-      className="flex w-full flex-col justify-center gap-2 px-8 sm:max-w-xl"
+      className="flex w-full flex-col justify-center gap-6 px-8 sm:max-w-xl"
       style={{ flex: "1.5" }}
     >
       <Brand />
@@ -227,7 +227,9 @@ export default async function Login({
 
         {/* New column for "OR" */}
         <div className="flex flex-col items-center justify-center">
+          <div className="h-full w-px bg-gray-300"></div>
           <span className="text-muted-foreground mb-2">OR</span>
+          <div className="h-full w-px bg-gray-300"></div>
         </div>
 
         <div className="flex flex-col justify-center gap-2">

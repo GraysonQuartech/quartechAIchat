@@ -38,9 +38,9 @@ export default function KeycloakLogin() {
   return (
     <Button
       onClick={() => signInWithKeycloak()}
-      className="border-foreground/20 mb-2 rounded-md border px-4 py-2"
+      className="mb-2 rounded-md bg-blue-700 px-4 py-2 text-white"
     >
-      Login With Keycloak
+      Verifiable Credential
     </Button>
   )
 }

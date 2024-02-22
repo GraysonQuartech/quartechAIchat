@@ -118,9 +118,12 @@ export const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
   )
 
   const handleSignOut = async () => {
+    const keycloak =
+      process.env.NEXT_PUBLIC_KEYKLOAK_LOGOUT_URL ?? "http://localhost:3000/"
     await supabase.auth.signOut()
     router.push("/login")
     router.refresh()
+    router.push(keycloak)
     return
   }
 
